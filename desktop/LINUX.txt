@@ -1,0 +1,27 @@
+FOSS-BU ARENA 1.2 - LINUX x86-64 PREVIEW
+
+Extract this folder and run: sh start.sh
+
+ARCH AND CACHYOS
+Install the launcher prerequisites:
+ sudo pacman -Syu --needed python tk iproute2 base-devel git
+Use the native Zandronum 3.2.1 AUR package. The launcher detects it through pacman and uses it instead of the bundled Ubuntu-oriented binary. Review the AUR PKGBUILD before building and installing:
+ git clone https://aur.archlinux.org/zandronum.git
+ cd zandronum
+ less PKGBUILD
+ makepkg -si
+The AUR package was verified as 3.2.1-2 when this preview was prepared. If the package version changes, both hosts and clients need matching engine versions; this launcher intentionally only selects the native 3.2.1 package.
+
+OTHER DISTRIBUTIONS
+The official Linux x86-64 engine is also bundled. It requires system libraries; missing libraries are reported before launch. Ubuntu-style library names do not necessarily match Arch. This package is not a tested universal Linux binary, and Raspberry Pi ARM is not supported.
+
+PLAY
+Up to 10 players. All choose the same mode: Classic deathmatch, Deathmatch + zombies, or Co-op adventure. The cooperative maps are from Freedoom Phase 2 in the DOOM_LAN_2 repository. Everyone uses the same game data and engine version. Host selects an unused port (10666 by default), shares the Wi-Fi IPv4 and port, and clicks Host match. Friends enter those values and click Join. The game remains on the local network; campus networks may block device-to-device traffic. Windows Zandronum and Linux Zandronum clients are intended to interoperate, but have not yet been tested together. Odamex uses a different protocol and cannot join this version.
+
+The launcher now saves server and player output to server.log and player.log in the game folder. Open game folder accesses it for troubleshooting. Stop my server ends the server started by this launcher only.
+
+VALIDATION
+Mode and connection arguments, 10-player limits, portable package integrity and Windows extraction were checked without launching matches. Arch/CachyOS gameplay, Linux UI, co-op balance, zombies and sustained multiplayer still require testing. Earlier hosting problems remain unconfirmed rather than fixed.
+
+CREDITS
+FreeDM/Freedoom by the Freedoom contributors, Zandronum by its contributors. Component licenses and credits are included in the extracted game directory. FMOD by Firelight Technologies Pty Ltd is proprietary; check its terms before public or sponsored distribution. The DOOM_LAN_2 repository supplied the reference hosting scripts and Freedoom Phase 2 data; its external server address is not hardcoded into this launcher.

@@ -1,0 +1,8 @@
+{
+  "name": "foss-bu-arena",
+  "main": "src/index.mjs",
+  "compatibility_date": "2025-01-01",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "durable_objects": { "bindings": [{ "name": "router", "class_name": "Router" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Router"] }]
+}

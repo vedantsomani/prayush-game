@@ -1,0 +1,8 @@
+{
+  "name": "foss-bu-arena-browser",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": { "start": "wrangler dev --local --ip 127.0.0.1 --port 8765" },
+  "devDependencies": { "wrangler": "4.156.0" }
+}
+
